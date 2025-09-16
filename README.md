@@ -249,3 +249,54 @@ __5.__ Try moving the AppleTree around in the scene by adjusting the X and Y cor
    __a.__ Set the position of AppleTree to P:[0, 11, 0]
 
    __b.__ Set the __leftAndRightEdge__ float in the _AppleTree (Script)_ component Inspector to _24_. this will overrrise the default value of t0 that's in the script.
+
+
+### Applying  AppleTree Instance Overrides to the AppleTree Prefab
+__1.__ Near the top of the Inspector, pop-up menu button labled _Overrides_.
+
+   __a.__ Click the _Overrides_ button. The pop-up that appears shows everything that will be applied back to the prefaab version.
+
+   __b.__ Click _Apply All_ to copy all AppleTree (SCript) settings to the prfab.
+
+
+### Basic Movement
+__1.__ Make the changes to the __Update()__ method in the AppleTree script
+
+```ruby
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class AppleTree : Monobehaviour {
+      [Header("Inscribed:)]
+      // Prefab for instantiating apples
+      public GameObject applePrefab;
+   
+      // Speed at which the AppleTree moves
+      public float speed = 1f;
+   
+      // Distance where AppleTree turns around
+      public float leftAndRightEndge = 10f;
+   
+      // Chance that the Apple Tree will change directions
+      public float changeDirChance = 0.1f;
+   
+      // Seconds between Apples instantiations
+      public float appleDrpoDelay = 1f;
+   
+      void start() {
+         // Start dropping apples
+      }
+   
+      void Update() {
+         // Basic Movement
+         Vector3 pos = transform.position;
+         pos.X += speed * Time.deltaTime;
+         transform.position = pos;
+
+         // Chainging Direction
+      }
+   }
+```
+
+__2.__ Save the script, return to Unity, and press _Play_.
