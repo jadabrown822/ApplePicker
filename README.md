@@ -103,15 +103,15 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 
 * __Apple__
 
-__1.__ From the menu bar, choose _GameObject > 3D Object > Sphere_.
-
-__2.__ Rename this sphere _Apple_.
-
-__3.__ To quickly reset the Transform of the Apple GameObject, select _Apple_ in the Hierarchy, and then click the three vertical dots in the top-tight corner of the Transform component in the Inspector pane for the Apple. Choose _Reset_ from the three-dot pop-up menu, and it will reset the transform of th eApple to:
-* P:[0, 0, 0]
-* R:[0, 0, 0]
-* S:[1, 1, 1]
-
-__4.__ Create a new material named _Mat_Apple_ and set its _Albedo_ color to a bright red.
-
-__5.__ Drag _Mat_Apple_ onto Apple in the Hierarchy.
+   __1.__ From the menu bar, choose _GameObject > 3D Object > Sphere_.
+   
+   __2.__ Rename this sphere _Apple_.
+   
+   __3.__ To quickly reset the Transform of the Apple GameObject, select _Apple_ in the Hierarchy, and then click the three vertical dots in the top-tight corner of the Transform component in the Inspector pane for the Apple. Choose _Reset_ from the three-dot pop-up menu, and it will reset the transform of th eApple to:
+   * P:[0, 0, 0]
+   * R:[0, 0, 0]
+   * S:[1, 1, 1]
+   
+   __4.__ Create a new material named _Mat_Apple_ and set its _Albedo_ color to a bright red.
+   
+   __5.__ Drag _Mat_Apple_ onto Apple in the Hierarchy.
