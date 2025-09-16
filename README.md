@@ -146,29 +146,41 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 
 * __Basket__
 
-__1.__ Choose _GameObject > 3D Object > Cube_ from the Unity menu bar
+   __1.__ Choose _GameObject > 3D Object > Cube_ from the Unity menu bar
+   
+   __a.__ Rename Cube to _Basket_.
+   
+   __b.__ Set the _transform_ of Basket to the following:
+   * P:[0, 0, 0]
+   * R:[0, 0, 0]
+   * S:[4, 1, 4]
+   
+   __2.__ Create a new material named _Mat_Basket_.
+   
+   __a.__ In the Mat_Bakset Inspector, set its _Albedo_ color to a light, desaturated yellow (like straw)
+   
+   __b.__ At the top of the Mat_Basket Inspector, set the _Shader_ to _Unlit > Color_ (which will appear in the Inspector as _Unlit/Color_ after you choose it).
+   
+   __C.__ Apply the Mat_Basket material to the Basket.
+   
+   __3.__ Add a Rigidbody component to Basket. Select _Basket_ in the Hierarcy and choose _Component > Physics > Rigidbody_ from the Unity menu
+   
+   __a.__ In Basket's Rigidbody Inspector, set _Use Gravity_ to false (unchecked).
+   
+   __b.__ In Basket's Rigidbody Inspector,set _Is Kinematic_ to true (checked).
+   
+   __4.__ Make Basket a prefab by dragging _Basket from teh Hierarchy pane to the Project pane and deleting the remaining instance of Basket from the Hierarchy (just as for Apple).
+   
+   __5.__ Save scene.
 
-__a.__ Rename Cube to _Basket_.
 
-__b.__ Set the _transform_ of Basket to the following:
-* P:[0, 0, 0]
+
+### Camera Setup
+__1.__ Select _Main Camera_ in the HIerarchy pane and ensure that its _transform_ is set as follows:
+* P:[0, 0, -10]
 * R:[0, 0, 0]
-* S:[4, 1, 4]
+* S:[1, 1, 1]
 
-__2.__ Create a new material named _Mat_Basket_.
-
-__a.__ In the Mat_Bakset Inspector, set its _Albedo_ color to a light, desaturated yellow (like straw)
-
-__b.__ At the top of the Mat_Basket Inspector, set the _Shader_ to _Unlit > Color_ (which will appear in the Inspector as _Unlit/Color_ after you choose it).
-
-__C.__ Apply the Mat_Basket material to the Basket.
-
-__3.__ Add a Rigidbody component to Basket. Select _Basket_ in the Hierarcy and choose _Component > Physics > Rigidbody_ from the Unity menu
-
-__a.__ In Basket's Rigidbody Inspector, set _Use Gravity_ to false (unchecked).
-
-__b.__ In Basket's Rigidbody Inspector,set _Is Kinematic_ to true (checked).
-
-__4.__ Make Basket a prefab by dragging _Basket from teh Hierarchy pane to the Project pane and deleting the remaining instance of Basket from the Hierarchy (just as for Apple).
-
-__5.__ Save scene.
+__2.__ In the Camera component of the Inspector, set the following
+   __a.__ Set the _Projection_ from Perspective to _Orthographic_.
+   __b.__ Set the _Size_ to _16_ (Size only appears for orthographic cameras).
