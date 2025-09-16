@@ -93,4 +93,10 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 
    __3.__ Dragg _AppleTree_ from the Hierarchy pane over to the Project pane to make a prefab from it
 
-   __4.__ To move AppleTree up and out of the way a bit, select _AppleTree_ in the HIerarchy and change its position to P:[0,10,0]
+   __4.__ To move AppleTree up and out of the way a bit, select _AppleTree_ in the HIerarchy and change its position to P:[0, 10, 0]
+
+   __5.__ At the top of the Scene pane, click the button labled "2D". This will orient the Scene view with the X axis pointing to the right, the Y axis pointing upward, and the Z axis pointing away towards teh horizon. This aligns the view of the Scene pane with the view of the Main Camera GameObject (and the image that the camera shows in the Game pane).
+
+   __6.__ Click th eEffects buttin at the top of the Scene pane to deslect it. The effects button looks like a stack of two layers and a star (Please click the icon itself to turn all effects off rather than clicking the down arrow, which gives a pop-up menu listing each effect)
+
+   __7.__ Save the scene.
