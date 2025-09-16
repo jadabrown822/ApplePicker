@@ -71,4 +71,26 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 
    __1.__ From the menu bar, choose _Assets > Create > Material_. This makes a new material in the Project pane.
 
-  __a.__ Rename this material to _Mat_Leaves_.
+   __a.__ Rename this material to _Mat_Leaves_.
+
+   __b.__ Drag the _Mat_Leaves_ material from the Project pane onto _Leaves_ in the scene or Hierarchy pane.
+
+   __c.__ Select _Mat_Leaves_ in the Project pane again.
+
+   __d.__ In the Inspector for Mat_leaves, set the _Albedo_ color under _Main Maps_ to a leafy-looking green
+
+   __e.__ In the Inspector for Mat_Leaves, set the Smoothness slider to 0 (zero). This eill reduce the _specular highlight_ (which is the bright reflection of the sun on the surface of a shiny object).
+
+   __2.__ From the menu bar, choose _Assets > Create> Material_ to create a second material.
+
+   __a.__ Name this second material _Mat_Wood_.
+
+   __b.__ Drag _Mat_Wood_ onto _Trunk_ in either Hierarchy or Scene pane.
+
+   __c.__ Set the _Albedo_ color of Mat_Wood to a tree-like brown.
+
+   __d.__ Adjust the Metallic and Smoothness sliders for texture
+
+   __3.__ Dragg _AppleTree_ from the Hierarchy pane over to the Project pane to make a prefab from it
+
+   __4.__ To move AppleTree up and out of the way a bit, select _AppleTree_ in the HIerarchy and change its position to P:[0,10,0]
