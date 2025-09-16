@@ -22,6 +22,7 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 ## Preparing
 ### Getting Started: Art Assets
 * __AppleTree__
+
   __1.__ From the Unity menu bar, choose _GameObject > 3D Object > Cyinder_. This will be the trunk of the tree.
     __a.__ Select the Cylinder in the Hierarchy.
     __b.__ Click its name (Cylinder) at the top of the Inspector and set the name to _Trunk_
