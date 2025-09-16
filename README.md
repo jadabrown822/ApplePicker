@@ -115,3 +115,11 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
    __4.__ Create a new material named _Mat_Apple_ and set its _Albedo_ color to a bright red.
    
    __5.__ Drag _Mat_Apple_ onto Apple in the Hierarchy.
+
+* __Adding Physics to the Apple__
+
+__1.__ Select Apple in the Herarchy pane. From the Unity menu bar, choose _Component > Physics > Rigidbody_.
+
+__2.__ Click the Unity _Play_ button, and the Apple will fall off the screen due to gracity.
+
+__3.__ Click the _Play_ buttong again to stop playback, and the Apple will return to its start locaton.
