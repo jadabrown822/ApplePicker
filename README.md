@@ -118,8 +118,20 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 
 * __Adding Physics to the Apple__
 
-__1.__ Select Apple in the Herarchy pane. From the Unity menu bar, choose _Component > Physics > Rigidbody_.
+   __1.__ Select Apple in the Herarchy pane. From the Unity menu bar, choose _Component > Physics > Rigidbody_.
+   
+   __2.__ Click the Unity _Play_ button, and the Apple will fall off the screen due to gracity.
+   
+   __3.__ Click the _Play_ buttong again to stop playback, and the Apple will return to its start locaton.
 
-__2.__ Click the Unity _Play_ button, and the Apple will fall off the screen due to gracity.
+* __Giving Apples the Tag "Apple"__
 
-__3.__ Click the _Play_ buttong again to stop playback, and the Apple will return to its start locaton.
+   __1.__ Select Apple in the Hierarchy, click the pop-up menu button next to Tag (that currently displays _Untagged_) and choose _Add Tag..._ from the pop-up menu. This opens Unity's Tags & Layers Manager in the Inspector.
+   
+   __2.__ Click the __+__ symbol to add a new tag.
+   
+   __3.__ Type _Apple_ into the _New Tag Name_ field and click _Save_.
+   
+   __4.__ Click _Apple_ in the Hierarchy again to return to the Inspector for Apple.
+   
+   __5.__ Clicking the Tag pop_up menu once more gives _Apple_ as a tag option (at the end of the list; these options are not alphabetically sorted). Choose _Apple_ from the list of tags. Apple GameObjects will have the tag _Apple_, which makes them easier to identify and select
