@@ -35,9 +35,17 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
    * R:[0, 0, 0]
    * S:[1, 1, 1]
 
-
    __2.__ Now create a new sphere by choosing _GameObject > 3D Object > Sphere_ from the menu bar. Rename the Sphere to _Leaves_ and set its transform
    
    * P:[0, 0.75, 0]
    * R:[0, 0, 0]
    * S:[3, 2, 3]
+
+   __3.__ From the menu bar, choose _GameObject > Create Empty_. This should create an empty GameObject. Make sure that its transform is set to the following:
+   * P:[0, 0, 0]
+   * R:[0, 0, 0]
+   * S:[1, 1, 1]
+
+   __4.__ In the Hierarchy pane, first change the name of the empty GameObject to _AppleTree_. Another way to do this is by clicking the name _GameOBject_ to highlight it, waiting for a second, and either pressing F2 or clicking it a second time.
+
+  __5.__ Individually drag the Trunk and Leaves GameObjects onto AppleTree, and they will be placed under AppleTree in the Hierarchy. If they are hidden under AppleTree, click the new disclosure triangle next to the word _AppleTree_ to see them.
