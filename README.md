@@ -143,3 +143,16 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
    __2.__ After Apple prefab is in the Project pane, click the _Apple_ instance in the Hierarchy pane and delete it (by choosing Delete from th right-click menu). Because the apples in the game will be instantiated from the Apple prefab in the Project pane, the game chould not start with an Apple in the Hierarchy
    
    __3.__ Save the scene.
+
+* __Basket__
+
+__1.__ Choose _GameObject > 3D Object > Cube_ from the Unity menu bar
+
+__a.__ Rename Cube to _Basket_.
+
+__b.__ Set the _transform_ of Basket to the following:
+* P:[0, 0, 0]
+* R:[0, 0, 0]
+* S:[4, 1, 4]
+
+__2.__ Create a new material named _Mat_Basket_.
