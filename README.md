@@ -65,3 +65,10 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
    __10.__ Select _AppleTree_, and its _Rigidbody_ component Inspector, uncheck _Use Gravity_. If left checked, the tree will fall down off the screen when scene is played.
 
    __11.__ Save the scene!
+
+
+* __Sample materials of AppleTree__
+
+   __1.__ From the menu bar, choose _Assets > Create > Material_. This makes a new material in the Project pane.
+
+  __a.__ Rename this material to _Mat_Leaves_.
