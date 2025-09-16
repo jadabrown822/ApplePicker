@@ -22,7 +22,8 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 ## Preparing
 ### Getting Started: Art Assets
 * __AppleTree__
-__1.__ From the Unity menu bar, choose _GameObject > 3D Object > Cyinder_. This will be the trunk of the tree.
+
+   __1.__ From the Unity menu bar, choose _GameObject > 3D Object > Cyinder_. This will be the trunk of the tree.
 
    __a.__ Select the Cylinder in the Hierarchy.
   
@@ -33,34 +34,34 @@ __1.__ From the Unity menu bar, choose _GameObject > 3D Object > Cyinder_. This 
    * R:[0, 0, 0]
    * S:[1, 1, 1]
 
-__2.__ Now create a new sphere by choosing _GameObject > 3D Object > Sphere_ from the menu bar. Rename the Sphere to _Leaves_ and set its transform:
+   __2.__ Now create a new sphere by choosing _GameObject > 3D Object > Sphere_ from the menu bar. Rename the Sphere to _Leaves_ and set its transform:
    * P:[0, 0.75, 0]
    * R:[0, 0, 0]
    * S:[3, 2, 3]
 
-__3.__ From the menu bar, choose _GameObject > Create Empty_. This should create an empty GameObject. Make sure that its transform is set to the following:
+   __3.__ From the menu bar, choose _GameObject > Create Empty_. This should create an empty GameObject. Make sure that its transform is set to the following:
    * P:[0, 0, 0]
    * R:[0, 0, 0]
    * S:[1, 1, 1]
 
-__4.__ In the Hierarchy pane, first change the name of the empty GameObject to _AppleTree_. Another way to do this is by clicking the name _GameOBject_ to highlight it, waiting for a second, and either pressing F2 or clicking it a second time.
+   __4.__ In the Hierarchy pane, first change the name of the empty GameObject to _AppleTree_. Another way to do this is by clicking the name _GameOBject_ to highlight it, waiting for a second, and either pressing F2 or clicking it a second time.
 
-__5.__ Individually drag the Trunk and Leaves GameObjects onto AppleTree, and they will be placed under AppleTree in the Hierarchy. If they are hidden under AppleTree, click the new disclosure triangle next to the word _AppleTree_ to see them.
+   __5.__ Individually drag the Trunk and Leaves GameObjects onto AppleTree, and they will be placed under AppleTree in the Hierarchy. If they are hidden under AppleTree, click the new disclosure triangle next to the word _AppleTree_ to see them.
 
-__6.__ Select _Dimetional Light_ in the Hierarchy and set its position to P:[0, 0, 0]
+   __6.__ Select _Dimetional Light_ in the Hierarchy and set its position to P:[0, 0, 0]
 
    * __Pivot/Center:__ The left button switches between _Pivot_ (the point about which the GameObject scales and rotates) and _Center_ (the geometrical center of the GameObject).
    * __Global/Local:__ The right buttong switches between _Global_ (positioned relative to world/global coordinates; in Global mode, the green Y axis of the move tool always points up) and _Local_ (positioned relative to the rotation of this GameObject; in Local mode, the green Y axis of teh move tool points up relative to the rotatino of the selected GameObject).
 
-__7.__ Set buttons to ___Pivot___ and ___Global___
+   __7.__ Set buttons to ___Pivot___ and ___Global___
 
-__8.__ Set the transform of AppleTree to the following:
+   __8.__ Set the transform of AppleTree to the following:
    * P:[0, 0, 0]
    * R:[0, 0, 0]
    * S:[2, 2, 2]
 
-__9.__ Add a Rigidbody component to AppleTree by selecting AppleTree in the Hierarchy and choosing _Component > Physics > Rigidbody_ from the Unity Menu
+   __9.__ Add a Rigidbody component to AppleTree by selecting AppleTree in the Hierarchy and choosing _Component > Physics > Rigidbody_ from the Unity Menu
 
-__10.__ Select _AppleTree_, and its _Rigidbody_ component Inspector, uncheck _Use Gravity_. If left checked, the tree will fall down off the screen when scene is played.
+   __10.__ Select _AppleTree_, and its _Rigidbody_ component Inspector, uncheck _Use Gravity_. If left checked, the tree will fall down off the screen when scene is played.
 
-__11.__ Save the scene!
+   __11.__ Save the scene!
