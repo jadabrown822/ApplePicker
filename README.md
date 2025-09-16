@@ -138,8 +138,8 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 
 * __Making the Apple into a Prefab__
 
-__1.__ Drag Apple from the Hierarchy pane to the Project pane to make it a prefab.
-
-__2.__ After Apple prefab is in the Project pane, click the _Apple_ instance in the Hierarchy pane and delete it (by choosing Delete from th right-click menu). Because the apples in the game will be instantiated from the Apple prefab in the Project pane, the game chould not start with an Apple in the Hierarchy
-
-__3.__ Save the scene.
+   __1.__ Drag Apple from the Hierarchy pane to the Project pane to make it a prefab.
+   
+   __2.__ After Apple prefab is in the Project pane, click the _Apple_ instance in the Hierarchy pane and delete it (by choosing Delete from th right-click menu). Because the apples in the game will be instantiated from the Apple prefab in the Project pane, the game chould not start with an Apple in the Hierarchy
+   
+   __3.__ Save the scene.
