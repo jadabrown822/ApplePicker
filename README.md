@@ -190,3 +190,62 @@ __2.__ In the Camera component of the Inspector, set the following
 __1.__ Click the _aspect ratio_ pop-up menu
 
 __2.__ Choose _Full HD (1920x1080)_ from the menu.
+
+
+## Coding the _Apple Picker_ Prototype
+__1.__ First, create a ne C# script named _AplleTree_ and ass it to the AppleTree prefab.
+
+   __a.__ Select _AppleTree_ in the Project pane (not the one in the Hierarchy).
+
+   __b.__ Click the _Add Component_ button near the bottom of the Inspector for AppleTree (Prefab Asset).
+
+   __c.__ Type _AppleTree_ in the sear field that pops up and then click _New Script_. New Script pop-up with the name of the new script preset to _AppleTree_.
+
+   __d.__CLick _Create and Add_ at the bottom og the NEw SCript pop-up. This dos two things:
+   * It creates a C# script named AppleTree.cs in the Assets folder of the Project pane.
+   * And it attaches that AppleTRee script as a component of the AppleTree prefab.
+
+__2.__ Open the AppleTree script in VS and enter code to match
+
+```ruby
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class AppleTree : Monobehaviour {
+      [Header("Inscribed:)]
+      // Prefab for instantiating apples
+      public GameObject applePrefab;
+   
+      // Speed at which the AppleTree moves
+      public float speed = 1f;
+   
+      // Distance where AppleTree turns around
+      public float leftAndRightEndge = 10f;
+   
+      // Chance that the Apple Tree will change directions
+      public float changeDirChance = 0.1f;
+   
+      // Seconds between Apples instantiations
+      public float appleDrpoDelay = 1f;
+   
+      void start() {
+         // Start dropping apples
+      }
+   
+      void Update() {
+         // Basic Movement
+         // Changing Direction
+      }
+   }
+```
+
+__3.__ Save the _AppleTree_ script to VS and return to Unity
+
+__4.__ Select the _AppleTree_ in the Hierarchy pane (not the Project pane).
+
+__5.__ Try moving the AppleTree around in the scene by adjusting the X and Y corrdinates in the Transform Inspector to find a good height (position.y) for th eAppleTree and a good limit for left and right movement
+
+   __a.__ Set the position of AppleTree to P:[0, 11, 0]
+
+   __b.__ Set the __leftAndRightEdge__ float in the _AppleTree (Script)_ component Inspector to _24_. this will overrrise the default value of t0 that's in the script.
