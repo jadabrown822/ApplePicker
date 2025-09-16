@@ -56,7 +56,13 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
 
    __7.__ Set buttons to ___Pivot___ and ___Global___
 
-  __8.__ Set the transform of AppleTree to the following:
-  * P:[0, 0, 0]
-  * R:[0, 0, 0]
-  * S:[2, 2, 2]
+   __8.__ Set the transform of AppleTree to the following:
+   * P:[0, 0, 0]
+   * R:[0, 0, 0]
+   * S:[2, 2, 2]
+
+   __9.__ Add a Rigidbody component to AppleTree by selecting AppleTree in the Hierarchy and choosing _Component > Physics > Rigidbody_ from the Unity Menu
+
+  __10.__ Select _AppleTree_, and its _Rigidbody_ component Inspector, uncheck _Use Gravity_. If left checked, the tree will fall down off the screen when scene is played.
+
+  __11.__ Save the scene!
