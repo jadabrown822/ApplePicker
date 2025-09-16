@@ -33,4 +33,11 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
   
    * P:[0, 0, 0]
    * R:[0, 0, 0]
-   * S:[0, 0, 0]
+   * S:[1, 1, 1]
+
+
+__2.__ Now create a new sphere by choosing _GameObject > 3D Object > Sphere_ from the menu bar. Rename the Sphere to _Leaves_ and set its transform
+
+   * P:[0, 0.75, 0]
+   * R:[0, 0, 0]
+   * S:[3, 2, 3]
