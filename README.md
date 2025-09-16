@@ -184,3 +184,9 @@ __1.__ Select _Main Camera_ in the HIerarchy pane and ensure that its _transform
 __2.__ In the Camera component of the Inspector, set the following
    __a.__ Set the _Projection_ from Perspective to _Orthographic_.
    __b.__ Set the _Size_ to _16_ (Size only appears for orthographic cameras).
+
+
+### Game Panel Settings
+__1.__ Click the _aspect ratio_ pop-up menu
+
+__2.__ Choose _Full HD (1920x1080)_ from the menu.
