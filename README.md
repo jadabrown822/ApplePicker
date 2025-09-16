@@ -135,3 +135,11 @@ Submit a one-page PDF file on Moodle that contains a GitHub link to you project
    __4.__ Click _Apple_ in the Hierarchy again to return to the Inspector for Apple.
    
    __5.__ Clicking the Tag pop_up menu once more gives _Apple_ as a tag option (at the end of the list; these options are not alphabetically sorted). Choose _Apple_ from the list of tags. Apple GameObjects will have the tag _Apple_, which makes them easier to identify and select
+
+* __Making the Apple into a Prefab__
+
+__1.__ Drag Apple from the Hierarchy pane to the Project pane to make it a prefab.
+
+__2.__ After Apple prefab is in the Project pane, click the _Apple_ instance in the Hierarchy pane and delete it (by choosing Delete from th right-click menu). Because the apples in the game will be instantiated from the Apple prefab in the Project pane, the game chould not start with an Apple in the Hierarchy
+
+__3.__ Save the scene.
