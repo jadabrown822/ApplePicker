@@ -885,3 +885,78 @@ __1.__ Open the Basket script in VS and match code
 ```
 
 __2.__ Save the Scene/SCripts _File > Save All_
+
+
+### Notifying ApplePicker That an Apple Was Missed
+__1.__ Make modifications to the _Apple C#_ script in VS
+
+```ruby
+// Apple.cs
+
+
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class Apple : MonoBehaviour {
+      public static float   bottomY = -20f;
+   
+      // Start() method not needed
+      // void Start() {}
+   
+      void Update() {
+         if (transform.position.y < bottomY) {
+            Destroy(this.gameObject);
+
+            // Get a reference to the ApplePicker component of Main Camera
+            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+
+            // Call the public AppleMissed() method of apScript
+            apScript.AppleMissed();
+         }
+      }
+   }
+```
+
+__2.__ Add a public __AppleMissed()__ method to the ApplePicker script by opening the _ApplePicker_ C# script in VS
+
+```ruby
+// Apple.cs
+
+
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class Apple : MonoBehaviour {
+      public static float   bottomY = -20f;
+   
+      // Start() method not needed
+      // void Start() {}
+
+      public void AppleMissed() {
+        // Destroy all of the falling Apples
+        GameObject[] appleArray=Gameobject.FindGameObjectWithTag("Apple");
+
+        foreach(GameObject tempGo in appleArray) {
+            Destroy(tempGo);
+        }
+      }
+   
+      void Update() {
+         if (transform.position.y < bottomY) {
+            Destroy(this.gameObject);
+
+            // Get a reference to the ApplePicker component of Main Camera
+            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+
+            // Call the public AppleMissed() method of apScript
+            apScript.AppleMissed();
+         }
+      }
+   }
+```
+
+__3.__ From the VS menu bar, choose _File > Save All_ to save both the Appple and ApplePicker scripts at the same time.
+
+__4.__ Return to Unity can click _Play_.
