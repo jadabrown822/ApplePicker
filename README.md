@@ -788,3 +788,9 @@ __5.__ Follow directions to make the HighScore Inspector match
   * Set _Width_ = 384 and _Height_ = 48
 
   __c.__ Double-click _HighScore_ in the Hierarchy again to recenter the view of  it in the Scene pane. These settings have moved the HighScore tothe top-left corner of the Canvas
+
+__6.__ Right-click on HighScore inthe Hierarchy and choose _Duplicate_. Check Hierarchy pane to see _HighScore (1)_ duplicate appear.
+
+__7.__ Select the new _HighScore (1)_ GameObject and change its name to _ScoreCounter_
+
+__8.__ Alter the _RectTransform_ and _Text_ values of ScoreCounter in the Inspector. Set the _Anchors_ and _Pivot_ in the RectTransform component and the _Alignment_ in the Text component
