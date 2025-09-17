@@ -275,7 +275,7 @@ __1.__ Make the changes to the __Update()__ method in the AppleTree script
    using UnityEngine;
    
    public class AppleTree : Monobehaviour {
-      [Header("Inscribed:)]
+      [Header("Inscribed")]
       // Prefab for instantiating apples
       public GameObject applePrefab;
    
