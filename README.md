@@ -759,3 +759,32 @@ __3.__ Save the scene!
 __1.__ Select _AppleTree_ in the Hierarchy
 
 __2.__ Use the _Overrides_ button in the Inspector to _Apply All_ overrides from the Hierarchy instance of AppleTree back to the AppleTree prefab
+
+
+## GUI and Game Management
+### HighScore and ScoreCounter Texts
+__1.__ From the Unity menu bar, choose _GameObject > UI> Text_
+
+__2.__ Set the Scene view to 2D
+
+__3.__ Double-click on _Canvas_ in the Hierarchy to zoom out and see the whole thing. This will be scaled to match the Game pane.
+
+__4.__ Select the _Text_ GameObject in the Hierarchy and use the Inspector pane to change its name to _HighScore_
+
+__5.__ Follow directions to make the HighScore Inspector match
+
+  __a.__ In the _Text (Script)_ component to the HIghScore Inspector:
+  * Set the _Text_ section to "High Score: 1,000"
+  * Set the _Font Style_ to Bold.
+  * Set the _Font size_ to 36 (This will make the text disappear)
+  * Set _Horizontal Overflow_ to Overflow
+  * Set _Vertical Overflow_ to Overflow (This will make the text reappear)
+  * Set the _Color_ to white, which will make it much more visible in the Game pane
+
+  __b.__ In the _RectTransform_ component of the HighScore Inspector:
+  * Set _Anchors Min X = 0, Min Y = 1, Max X = 0,_ and _Max Y = 1_ (May need to click the disclosure triangle next to _Anchors_ to see thses fields)
+  * Set _Pivot X = 0_ and _Y = 1_.
+  * Set _Pos X = 16, Pos Y = -9,_ and _Pos Z = 0_
+  * Set _Width_ = 384 and _Height_ = 48
+
+  __c.__ Double-click _HighScore_ in the Hierarchy again to recenter the view of  it in the Scene pane. These settings have moved the HighScore tothe top-left corner of the Canvas
