@@ -321,7 +321,7 @@ __1.__ Modify the AppleTree script
    using UnityEngine;
    
    public class AppleTree : Monobehaviour {
-      [Header("Inscribed:)]
+      [Header("Inscribed")]
       // Prefab for instantiating apples
       public GameObject applePrefab;
    
@@ -373,7 +373,7 @@ __1.__ Add code to AppleTree.cs script
    using UnityEngine;
    
    public class AppleTree : Monobehaviour {
-      [Header("Inscribed:)]
+      [Header("Inscribed")]
       // Prefab for instantiating apples
       public GameObject applePrefab;
    
@@ -430,7 +430,7 @@ __5.__ Make the code changes to match
    using UnityEngine;
    
    public class AppleTree : Monobehaviour {
-      [Header("Inscribed:)]
+      [Header("Inscribed")]
       // Prefab for instantiating apples
       public GameObject applePrefab;
    
@@ -498,7 +498,7 @@ __3.__ To make the AppleTree actually drop apples, return to VS and add the code
    using UnityEngine;
    
    public class AppleTree : Monobehaviour {
-      [Header("Inscribed:)]
+      [Header("Inscribed")]
       // Prefab for instantiating apples
       public GameObject applePrefab;
    
