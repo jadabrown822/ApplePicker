@@ -540,3 +540,27 @@ __4.__ Save the _AppleTree_ script, return to Unity click _Play_.
 __5.__ In the Rigidbody component Inspector for AppleTree, select the checkbox for _Is Kinimatic_.
 
 __6.__ Click _Play_ again.
+
+
+### Setting Physical Layers
+__1.__ Click the _AppleTree_ in the Hierarcy and then choose _Add Layer..._ from the pop-up menu next to Layer (that currently shows _Default_)
+
+__2.__ Name Layer 8 _AppleTree_, layer 9 _Apple_, and layer 10 _Basket_
+
+__3.__ From the Unity menu bar, choose _Edit > Project Settings..._. This opens the Project Setting window. Choose _Physics_ from the list of Project Settings on the left side of the window (Choose _Physics_ and __not__ _Physics 2D_).
+
+__4.__ Apple must collide with the Basket and to _not_ colide with either the AppleTree or other Apples. (All checked except for Apple/Apple and Apple/AppleTree).
+
+__5.__ Layer Collision Matrix is set porpertly, it's time to assign physics layers to the important GameObjects in the game
+
+   __a.__ Close the Project Settings window
+
+   __b.__ Select the _AppleTree_ prefab in the Project pane, and then select _AppleTree_ from the _Layer pop-up menu_ near the top of the Inspector pane, just above the Transform component
+
+   __c.__ Choose _Yes, change children_ to change the layer of all children because the Trunk and Leaves need to be child object of AppleTree to also be in the AppleTree physics layer.
+
+   __d.__ Select the _Basket_ prefab in the Project pane and set its Layer to _Basket_.
+
+   __e.__ Select the _Apple_ prefab in the Project pane and set its Layer to _Apple_.
+
+__6.__ Always save scene.
