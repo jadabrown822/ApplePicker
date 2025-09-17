@@ -701,3 +701,61 @@ __2.__ Open basket C# script in VS and enter the code
       }
    }
 ```
+
+
+### Catching Apples
+__1.__ Open _Basket_ script and copy code
+
+```ruby
+// Basket.cs
+
+
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class Basket : MonoBehaviour {
+
+   
+      void Start() {
+         ...
+      }
+   
+      void Update() {
+         // GEt the current screen position of the mouse from Input
+         Vector3 mousePos2d = Input.mousePosition;
+
+         /* The Camera's z position sets how far to push the mouse into 3D
+            If this line causes a NullReferenceException, select the Main Camera
+            in the Hierarchy and set its tag to MainCamera in the Inspector
+         */
+         mousePos2D.z = -Camera.main.transform.position.z;
+
+         // Conver the point from 2D screen space into 3D game world space
+         Vecotr3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
+
+         // Move the x position of this Basket to the x position of the Mouse
+         Vecotr3 pos = this.transform.position;
+         pos.x = mousePos3D.x;
+         this.transform.position = pos;
+      }
+
+      void OnCollisionEnter(Collision coll) {
+         // Find out what hit the basket
+         GameObject collidedWith = coll.gameObject;
+         if (collidedWith.CompareTag("Apple")) {
+            Destroy(collidedWith);
+         }
+      }
+   }
+```
+
+__2.__ Save the _Basket_ script, return to Unity, and click _Play_.
+
+__3.__ Save the scene!
+
+
+### Turning AppleTRee (SCript) Variables
+__1.__ Select _AppleTree_ in the Hierarchy
+
+__2.__ Use the _Overrides_ button in the Inspector to _Apply All_ overrides from the Hierarchy instance of AppleTree back to the AppleTree prefab
