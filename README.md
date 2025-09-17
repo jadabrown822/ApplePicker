@@ -841,6 +841,7 @@ __1.__ Open the Basket script in VS and match code
    using UnityEngine;
    
    public class Basket : MonoBehaviour {
+      public ScoreCounter scoreCounter;
 
    
       void Start() {
