@@ -203,7 +203,7 @@ __1.__ First, create a ne C# script named _AppleTree_ and add it to the AppleTre
 
    __c.__ Type _AppleTree_ in the sear field that pops up and then click _New Script_. New Script pop-up with the name of the new script preset to _AppleTree_.
 
-   __d.__CLick _Create and Add_ at the bottom og the NEw SCript pop-up. This dos two things:
+   __d.__ CLick _Create and Add_ at the bottom og the NEw SCript pop-up. This dos two things:
    * It creates a C# script named AppleTree.cs in the Assets folder of the Project pane.
    * And it attaches that AppleTRee script as a component of the AppleTree prefab.
 
@@ -215,7 +215,7 @@ __2.__ Open the AppleTree script in VS and enter code to match
    using UnityEngine;
    
    public class AppleTree : Monobehaviour {
-      [Header("Inscribed:)]
+      [Header("Inscribed")]
       // Prefab for instantiating apples
       public GameObject applePrefab;
    
