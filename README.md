@@ -340,10 +340,10 @@ __1.__ Modify the AppleTree script
          transform.position = pos;
 
          // Chainging Direction
-         if (pos.x < - leftAndRightEdge) {
+         if (pos.x < -leftAndRightEdge) {
             speed = Mathf.Abs(speed);      // Move right
          }
-         else if {
+         else if (pos.x > leftAndRightEdge) {
             speed = -Mathf.Abs(speed);     // Move left
          }
       }
@@ -389,13 +389,13 @@ __1.__ Add code to AppleTree.cs script
          transform.position = pos;
 
          // Chainging Direction
-         if (pos.x < - leftAndRightEdge) {
+         if (pos.x < -leftAndRightEdge) {
             speed = Mathf.Abs(speed);      // Move right
          }
-         else if {
+         else if (pos.x > leftAndRightEdge) {
             speed = -Mathf.Abs(speed);     // Move left
          }
-         else if {
+         else if (Random.value < changeDirChance) {
             speed *= -1;      // Change direction
          }
       }
@@ -443,15 +443,15 @@ __5.__ Make the code changes to match
          transform.position = pos;
 
          // Chainging Direction
-         if (pos.x < - leftAndRightEdge) {
+         if (pos.x < -leftAndRightEdge) {
             speed = Mathf.Abs(speed);      // Move right
          }
-         else if {
+         else if (pos.x > leftAndRightEdge) {
             speed = -Mathf.Abs(speed);     // Move left
          }
-         else if {
+         /* else if (Random.value < changeDirChamce) {
             speed *= -1;      // Change direction
-         }
+         } */
       }
 
       void FixedUpdate() {
