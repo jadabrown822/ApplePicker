@@ -599,3 +599,36 @@ __4.__ For this code to function in the game, attach the Apple C# script to the 
    __b.__ Scroll to the bottom of the Inspector and click the _Add Component_ button
 
    __c.__ From the pop-up menu that appears, select _Scripts > Apple_
+
+
+### Instantiating the Baskets
+__1.__ Create a new C# script named _ApplePicker_.
+
+__2.__ Open the _ApplePicker_ script in VS and type the code
+
+```ruby
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class Apple : MonoBehaviour {
+      [Header("Inscribed")]
+      public GameObject basketPrefab;
+      public int   NumBaskets = 3;
+      public float   basketBottomY = -14f;
+      public float   basketSpacingY = 2f;
+   
+      void Start() {
+         for (int i = 0; i < numBaskets; i++) {
+            GameObject tBasketGO = Instantiate<GameObject>(basketPrefab);
+            Vector3 pos = Vector3.zero;
+            pos.y = basketBOttomY + (basketSpacingY * i);
+            tBasketGO.transform.position = pos;
+         }
+      }
+   
+      void Update() {
+         }
+      }
+   }
+```
