@@ -210,6 +210,8 @@ __1.__ First, create a ne C# script named _AppleTree_ and add it to the AppleTre
 __2.__ Open the AppleTree script in VS and enter code to match
 
 ```ruby
+// AppleTree.cs
+
    using System.Collections;
    using System.Collections.Generic;
    using UnityEngine;
@@ -265,6 +267,9 @@ __1.__ Near the top of the Inspector, pop-up menu button labled _Overrides_.
 __1.__ Make the changes to the __Update()__ method in the AppleTree script
 
 ```ruby
+// AppleTree.cs
+
+
    using System.Collections;
    using System.Collections.Generic;
    using UnityEngine;
@@ -308,6 +313,9 @@ __2.__ Save the script, return to Unity, and press _Play_.
 __1.__ Modify the AppleTree script
 
 ```ruby
+// AppleTree.cs
+
+
    using System.Collections;
    using System.Collections.Generic;
    using UnityEngine;
@@ -357,6 +365,9 @@ __2.__ Save the script, return to Unity, and click _Play_.
 __1.__ Add code to AppleTree.cs script
 
 ```ruby
+// AppleTree.cs
+
+
    using System.Collections;
    using System.Collections.Generic;
    using UnityEngine;
@@ -411,6 +422,9 @@ __4.__ In the Inspector of the AppleTree, change the value of __changeDirChance_
 __5.__ Make the code changes to match
 
 ```ruby
+// AppleTree.cs
+
+
    using System.Collections;
    using System.Collections.Generic;
    using UnityEngine;
@@ -476,6 +490,9 @@ __2.__ Assign the Apple prefab to the applePrefab filed in either of two ways:
 __3.__ To make the AppleTree actually drop apples, return to VS and add the code.
 
 ```ruby
+// AppleTree.cs
+
+
    using System.Collections;
    using System.Collections.Generic;
    using UnityEngine;
@@ -572,6 +589,9 @@ __1.__ From the Unity menu bar, choose _Assets > Create > C# Script_. This creat
 __2.__ Open the _Apple_ C# script and add code
 
 ```ruby
+// Apple.cs
+
+
    using System.Collections;
    using System.Collections.Generic;
    using UnityEngine;
@@ -607,11 +627,14 @@ __1.__ Create a new C# script named _ApplePicker_.
 __2.__ Open the _ApplePicker_ script in VS and type the code
 
 ```ruby
+// ApplePicker.cs
+
+
    using System.Collections;
    using System.Collections.Generic;
    using UnityEngine;
    
-   public class Apple : MonoBehaviour {
+   public class ApplePicker : MonoBehaviour {
       [Header("Inscribed")]
       public GameObject basketPrefab;
       public int   NumBaskets = 3;
@@ -636,3 +659,45 @@ __2.__ Open the _ApplePicker_ script in VS and type the code
 __3.__ Attach the ApplePicker script from the Project pane to  _Main Camera_ in the Heirarchy
 
 __4.__ Click _Main Camera_ in the Hierarchy pane to set the __basketPrefab__ in the Inspector to be the _Basket GameObject prefab_ from the Porject pane. Click _Play_, the code screates three baskets at the bottom of the sreen.
+
+
+### Moving the Baskets with the Mouse
+__1.__ Create a new C# script named _Basket_ and attach it to the Basket prefab in the Project pane
+
+__2.__ Open basket C# script in VS and enter the code
+
+```ruby
+// Basket.cs
+
+
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class Basket : MonoBehaviour {
+
+   
+      void Start() {
+         ...
+      }
+   
+      void Update() {
+         // GEt the current screen position of the mouse from Input
+         Vector3 mousePos2d = Input.mousePosition;
+
+         /* The Camera's z position sets how far to push the mouse into 3D
+            If this line causes a NullReferenceException, select the Main Camera
+            in the Hierarchy and set its tag to MainCamera in the Inspector
+         */
+         mousePos2D.z = -Camera.main.transform.position.z;
+
+         // Conver the point from 2D screen space into 3D game world space
+         Vecotr3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
+
+         // Move the x position of this Basket to the x position of the Mouse
+         Vecotr3 pos = this.transform.position;
+         pos.x = mousePos3D.x;
+         this.transform.position = pos;
+      }
+   }
+```
