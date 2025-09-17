@@ -794,3 +794,93 @@ __6.__ Right-click on HighScore inthe Hierarchy and choose _Duplicate_. Check Hi
 __7.__ Select the new _HighScore (1)_ GameObject and change its name to _ScoreCounter_
 
 __8.__ Alter the _RectTransform_ and _Text_ values of ScoreCounter in the Inspector. Set the _Anchors_ and _Pivot_ in the RectTransform component and the _Alignment_ in the Text component
+
+
+### Accumulating Points for Each Caught Apple
+__1.__ Create a new C# script name _ScoreCounter_ adnd attach it to the SCoreCounter GameObjact in the Hierarcy
+
+__2.__ Open the _ScoreCounter_ script in VS and make it match the code
+
+```ruby
+// ScoreCounter.cs
+
+
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   using UnityEngine.UI;    // This line enables use of uGUI classes like Text.
+   
+   public class ScoreCounter : MonoBehaviour {
+
+      [Header("Dynamic")]
+      public int    score = 0;
+
+      private Text  uiText;
+   
+      void Start() {
+        uiText = GetComponent<Text>();
+      }
+   
+      void Update() {
+        uiText.text = score.ToString("#,0");    // This 0 is zero!
+      }
+
+   }
+```
+
+
+### Making Basket Increase the ScoreCounter Score
+__1.__ Open the Basket script in VS and match code
+
+```ruby
+// Basket.cs
+
+
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class Basket : MonoBehaviour {
+
+   
+      void Start() {
+        // Find a GameObject name SCoreCounter i the SCene Hierarchy
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+
+        // GEt the ScoreCounter (Script) component to scoreGO
+        scoreCounter = scoreGO.GetComponent<ScoreCounter>();
+      }
+   
+      void Update() {
+         // GEt the current screen position of the mouse from Input
+         Vector3 mousePos2d = Input.mousePosition;
+
+         /* The Camera's z position sets how far to push the mouse into 3D
+            If this line causes a NullReferenceException, select the Main Camera
+            in the Hierarchy and set its tag to MainCamera in the Inspector
+         */
+         mousePos2D.z = -Camera.main.transform.position.z;
+
+         // Conver the point from 2D screen space into 3D game world space
+         Vecotr3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
+
+         // Move the x position of this Basket to the x position of the Mouse
+         Vecotr3 pos = this.transform.position;
+         pos.x = mousePos3D.x;
+         this.transform.position = pos;
+      }
+
+      void OnCollisionEnter(Collision coll) {
+         // Find out what hit the basket
+         GameObject collidedWith = coll.gameObject;
+         if (collidedWith.CompareTag("Apple")) {
+            Destroy(collidedWith);
+
+            // Increase the score
+            scoreCounter.score += 100;
+         }
+      }
+   }
+```
+
+__2.__ Save the Scene/SCripts _File > Save All_
