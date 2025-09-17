@@ -195,7 +195,7 @@ __2.__ Choose _Full HD (1920x1080)_ from the menu.
 
 
 ## Coding the _Apple Picker_ Prototype
-__1.__ First, create a ne C# script named _AplleTree_ and ass it to the AppleTree prefab.
+__1.__ First, create a ne C# script named _AppleTree_ and add it to the AppleTree prefab.
 
    __a.__ Select _AppleTree_ in the Project pane (not the one in the Hierarchy).
 
