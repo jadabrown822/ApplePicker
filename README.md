@@ -464,3 +464,79 @@ __5.__ Make the code changes to match
 ```
 
 __6.__ Save Scene!
+
+
+### Dropping Apple
+__1.__ Selct _AppleTree_ in the Hierarchy and look at the _AppleTree (Script)_ component in its Insector
+
+__2.__ Assign the Apple prefab to the applePrefab filed in either of two ways:
+   * Click the tiny target to the right of _Apple Prefab None (Game Object)_ int he Inspector and select _Apple_ __from the _Assets_ tab__ in the window that appears.
+   * Drag the _Apple GameObject prefab_ from the Project pane onto the _ApplePrefab_ value in the Inspector pane.
+
+__3.__ To make the AppleTree actually drop apples, return to VS and add the code.
+
+```ruby
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class AppleTree : Monobehaviour {
+      [Header("Inscribed:)]
+      // Prefab for instantiating apples
+      public GameObject applePrefab;
+   
+      // Speed at which the AppleTree moves
+      public float speed = 1f;
+   
+      // Distance where AppleTree turns around
+      public float leftAndRightEdge = 10f;
+   
+      // Chance that the Apple Tree will change directions
+      public float changeDirChance = 0.1f;
+   
+      // Seconds between Apples instantiations
+      public float appleDrpoDelay = 1f;
+   
+      void start() {
+         // Start dropping apples
+         Invoke("DropApple", 2f);
+      }
+
+      void DropApple() {
+         GameObject apple = InstantiTe<GameObject>(applePrefab);
+         apple.transform.position = transform.position;
+         Invoke("DropApple", appleDropDelay);
+      }
+
+      void Update() {
+         // Basic Movement
+         Vector3 pos = transform.position;
+         pos.x += speed * Time.deltaTime;
+         transform.position = pos;
+
+         // Chainging Direction
+         if (pos.x < -leftAndRightEdge) {
+            speed = Mathf.Abs(speed);      // Move right
+         }
+         else if (pos.x > leftAndRightEdge) {
+            speed = -Mathf.Abs(speed);     // Move left
+         }
+         /* else if (Random.value < changeDirChamce) {
+            speed *= -1;      // Change direction
+         } */
+      }
+
+      void FixedUpdate() {
+         // Random direction changes are now time-based due to FixedUpdate()
+         if (Random.value < changeDirChance) {
+            speed *= -1      // Change direction
+         }
+      }
+   }
+```
+
+__4.__ Save the _AppleTree_ script, return to Unity click _Play_.
+
+__5.__ In the Rigidbody component Inspector for AppleTree, select the checkbox for _Is Kinimatic_.
+
+__6.__ Click _Play_ again.
