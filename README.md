@@ -632,3 +632,7 @@ __2.__ Open the _ApplePicker_ script in VS and type the code
       }
    }
 ```
+
+__3.__ Attach the ApplePicker script from the Project pane to  _Main Camera_ in the Heirarchy
+
+__4.__ Click _Main Camera_ in the Hierarchy pane to set the __basketPrefab__ in the Inspector to be the _Basket GameObject prefab_ from the Porject pane. Click _Play_, the code screates three baskets at the bottom of the sreen.
