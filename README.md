@@ -182,7 +182,9 @@ __1.__ Select _Main Camera_ in the HIerarchy pane and ensure that its _transform
 * S:[1, 1, 1]
 
 __2.__ In the Camera component of the Inspector, set the following
+
    __a.__ Set the _Projection_ from Perspective to _Orthographic_.
+
    __b.__ Set the _Size_ to _16_ (Size only appears for orthographic cameras).
 
 
