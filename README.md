@@ -564,3 +564,38 @@ __5.__ Layer Collision Matrix is set porpertly, it's time to assign physics laye
    __e.__ Select the _Apple_ prefab in the Project pane and set its Layer to _Apple_.
 
 __6.__ Always save scene.
+
+
+### Stopping Apples If They Fall Too Far
+__1.__ From the Unity menu bar, choose _Assets > Create > C# Script_. This creates a new C# script. Name it _Apple.cs_
+
+__2.__ Open the _Apple_ C# script and add code
+
+```ruby
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class Apple : MonoBehaviour {
+      public static float   bottomY = -20f;
+   
+      // Start() method not needed
+      // void Start() {}
+   
+      void Update() {
+         if (transform.position.y < bottomY) {
+            Destroy(this.gameObject);
+         }
+      }
+   }
+```
+
+__3.__ Save the _Apple_ script in VS
+
+__4.__ For this code to function in the game, attach the Apple C# script to the Apple GameObject prefab in the Project pane.
+
+   __a.__ Select the _Apple_ prefab in the Project pane,
+
+   __b.__ Scroll to the bottom of the Inspector and click the _Add Component_ button
+
+   __c.__ From the pop-up menu that appears, select _Scripts > Apple_
