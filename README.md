@@ -344,7 +344,7 @@ __1.__ Modify the AppleTree script
             speed = Mathf.Abs(speed);      // Move right
          }
          else if {
-            speed = -Mathf.Abs(speed);      // Move left
+            speed = -Mathf.Abs(speed);     // Move left
          }
       }
    }
