@@ -10,6 +10,7 @@ public class Basket : MonoBehaviour
         
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -29,5 +30,17 @@ public class Basket : MonoBehaviour
         Vector3 pos = this.transform.position;
         pos.x = mousePos3D.x;
         this.transform.position = pos;
+    }
+
+
+    void OnCollisionEnter(Collision coll)
+    {
+        // Find out what hit the basket
+        GameObject collideWith = coll.gameObject;
+
+        if (collideWith.CompareTag("Apple"))
+        {
+            Destroy(collideWith);
+        }
     }
 }
