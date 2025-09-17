@@ -31,6 +31,7 @@ public class AppleTree : MonoBehaviour
         // Start droppping apples
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -44,9 +45,15 @@ public class AppleTree : MonoBehaviour
         {
             speed = Mathf.Abs(speed);       // Move Right
         }
+        
         else if (pos.x > leftAndRightEdge)
         {
             speed = -Mathf.Abs(speed);      // Move Left
+        }
+
+        else if (Random.value < changeDirChance)
+        {
+            speed *= -1;        // Change Direction
         }
     }
 }
