@@ -351,3 +351,116 @@ __1.__ Modify the AppleTree script
 ```
 
 __2.__ Save the script, return to Unity, and click _Play_.
+
+
+### Change Direction Randomly
+__1.__ Add code to AppleTree.cs script
+
+```ruby
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class AppleTree : Monobehaviour {
+      [Header("Inscribed:)]
+      // Prefab for instantiating apples
+      public GameObject applePrefab;
+   
+      // Speed at which the AppleTree moves
+      public float speed = 1f;
+   
+      // Distance where AppleTree turns around
+      public float leftAndRightEdge = 10f;
+   
+      // Chance that the Apple Tree will change directions
+      public float changeDirChance = 0.1f;
+   
+      // Seconds between Apples instantiations
+      public float appleDrpoDelay = 1f;
+   
+      void start() {
+         // Start dropping apples
+      }
+   
+      void Update() {
+         // Basic Movement
+         Vector3 pos = transform.position;
+         pos.x += speed * Time.deltaTime;
+         transform.position = pos;
+
+         // Chainging Direction
+         if (pos.x < - leftAndRightEdge) {
+            speed = Mathf.Abs(speed);      // Move right
+         }
+         else if {
+            speed = -Mathf.Abs(speed);     // Move left
+         }
+         else if {
+            speed *= -1;      // Change direction
+         }
+      }
+   }
+```
+
+__2.__ Save the script, return to Unity, and click _Play_. The default __changeDirChance__ of __0.1__ changes direction too often.
+
+__3.__ Stop playback.
+
+__4.__ In the Inspector of the AppleTree, change the value of __changeDirChance__ to __0.02__.
+
+__5.__ Make the code changes to match
+
+```ruby
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class AppleTree : Monobehaviour {
+      [Header("Inscribed:)]
+      // Prefab for instantiating apples
+      public GameObject applePrefab;
+   
+      // Speed at which the AppleTree moves
+      public float speed = 1f;
+   
+      // Distance where AppleTree turns around
+      public float leftAndRightEdge = 10f;
+   
+      // Chance that the Apple Tree will change directions
+      public float changeDirChance = 0.1f;
+   
+      // Seconds between Apples instantiations
+      public float appleDrpoDelay = 1f;
+   
+      void start() {
+         // Start dropping apples
+      }
+
+      void Update() {
+         // Basic Movement
+         Vector3 pos = transform.position;
+         pos.x += speed * Time.deltaTime;
+         transform.position = pos;
+
+         // Chainging Direction
+         if (pos.x < - leftAndRightEdge) {
+            speed = Mathf.Abs(speed);      // Move right
+         }
+         else if {
+            speed = -Mathf.Abs(speed);     // Move left
+         }
+         else if {
+            speed *= -1;      // Change direction
+         }
+      }
+
+      void FixedUpdate() {
+         // Random direction changes are now time-based due to FixedUpdate()
+         if (Random.value < changeDirChance) {
+            speed *= -1      // Change direction
+         }
+      }
+   }
+```
+
+__6.__ Save Scene!
