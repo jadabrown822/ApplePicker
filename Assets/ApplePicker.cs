@@ -17,7 +17,7 @@ public class ApplePicker : MonoBehaviour
     {
         basketList = new List<GameObject>();
 
-        for (int i = 0; i < numBaskets; i++)
+        for (int i = 0; i <= numBaskets; i++)
         {
             GameObject tBasketsGO = Instantiate<GameObject>(basketPrefab);
             Vector3 pos = Vector3.zero;
