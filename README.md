@@ -1043,3 +1043,118 @@ __1.__ Open the _AppplePicker_ Script in VS and match code
 ```
 
 __2.__ _Save All_ scripts in VS, the return to Unity and save Scene
+
+
+### Adding a High Score
+__1.__ Create a new C# script named _HighScore_ and attach it to the _HighScore GameObject_ in the Hierarchy pane
+
+__2.__ Open the _HighScore_ script in VS and copy code
+
+```ruby
+// HighScore.cs
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.UI;
+
+    public class HighScore : MonoBehaviour
+    {
+        static private Text     _UI_TEXT;
+        static private int      _SCORE = 1000;
+
+        private TExt txtCom;    // txtCom is a reference to this GO's Text component
+
+
+        void Awake() {
+            _UI_TEXT = GetComponent<Text>();
+        }
+
+
+        startic public int SCORE {
+            get {return _SCORE}
+
+            private set {
+                _SCORE = value;
+                if(_UI_TEXT != null) {
+                    _UI_TEXT.text = "High Score: " + value.ToString("#,0");
+                }
+            }
+        }
+
+
+        static public void TRY_SET_HIGH_SCORE(int scoreToTry) {
+            if (scoreToTry <= SCORE) return;    // If scoreToTry is too low, retun
+        }
+
+
+        /*
+        void Start()
+        {
+
+        }
+
+        void Update()
+        {
+        
+        }
+        */
+    }
+```
+
+__3.__ Open the _Basket_ C# script and match code
+
+```ruby
+// Basket.cs
+
+
+   using System.Collections;
+   using System.Collections.Generic;
+   using UnityEngine;
+   
+   public class Basket : MonoBehaviour {
+      public ScoreCounter scoreCounter;
+
+   
+      void Start() {
+        // Find a GameObject name SCoreCounter i the SCene Hierarchy
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+
+        // GEt the ScoreCounter (Script) component to scoreGO
+        scoreCounter = scoreGO.GetComponent<ScoreCounter>();
+      }
+   
+      void Update() {
+         // GEt the current screen position of the mouse from Input
+         Vector3 mousePos2d = Input.mousePosition;
+
+         /* The Camera's z position sets how far to push the mouse into 3D
+            If this line causes a NullReferenceException, select the Main Camera
+            in the Hierarchy and set its tag to MainCamera in the Inspector
+         */
+         mousePos2D.z = -Camera.main.transform.position.z;
+
+         // Conver the point from 2D screen space into 3D game world space
+         Vecotr3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
+
+         // Move the x position of this Basket to the x position of the Mouse
+         Vecotr3 pos = this.transform.position;
+         pos.x = mousePos3D.x;
+         this.transform.position = pos;
+      }
+
+      void OnCollisionEnter(Collision coll) {
+         // Find out what hit the basket
+         GameObject collidedWith = coll.gameObject;
+         if (collidedWith.CompareTag("Apple")) {
+            Destroy(collidedWith);
+
+            // Increase the score
+            scoreCounter.score += 100;
+            HighScore.TRY_SET_HIGH_SCORE(scoreCounter.score);
+         }
+      }
+   }
+```
+
+__4.__ Save all scripts in VS, return to Unity and click Play
