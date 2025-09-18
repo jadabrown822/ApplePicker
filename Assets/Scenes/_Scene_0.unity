@@ -392,7 +392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roundText: {fileID: 986013483}
-  timeToNextRound: 5
+  currentRound: 1
+  timeToNextRound: 60
 --- !u!114 &986013483
 MonoBehaviour:
   m_ObjectHideFlags: 0
