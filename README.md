@@ -1041,3 +1041,5 @@ __1.__ Open the _AppplePicker_ Script in VS and match code
         }
     }
 ```
+
+__2.__ _Save All_ scripts in VS, the return to Unity and save Scene
