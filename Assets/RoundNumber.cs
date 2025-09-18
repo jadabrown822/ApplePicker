@@ -5,11 +5,13 @@ using TMPro;
 
 public class RoundNumber : MonoBehaviour
 {
+    [Header("Dynamic")]
+
     public TextMeshProUGUI roundText;
 
-    private int currentLevel = 1;
+    private int currentRound = 1;
 
-    public float timeToNextRound = 5.0f;
+    public float timeToNextRound = 1.0f;
 
 
     private void start() 
@@ -21,15 +23,15 @@ public class RoundNumber : MonoBehaviour
 
     private void UpdateRoundText() 
     {
-        roundText.text = "Round " + currentRound.ToString();
+        roundText.text = "Round " + currentRound.ToString("#,0");
     }
 
 
-    private IEnumerator IncreaseRondOverTime()
+    private IEnumerator IncreaseRoundOverTime()
     {
         while (currentRound < 4)
         {
-            yield return new WaitForSecond(timeToNextRound);
+            yield return new WaitForSeconds(timeToNextRound);
 
             currentRound++;
             UpdateRoundText();
