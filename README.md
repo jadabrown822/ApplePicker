@@ -921,42 +921,123 @@ __1.__ Make modifications to the _Apple C#_ script in VS
 __2.__ Add a public __AppleMissed()__ method to the ApplePicker script by opening the _ApplePicker_ C# script in VS
 
 ```ruby
-// Apple.cs
+// ApplePicker.cs
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
 
+    public class ApplePicker : MonoBehaviour
+    {
+        [Header("Inscribed")]
+        public GameObject   basketPrefab;
+        public int numBaskets = 3;
+        public float basketBottomY = -14f;
+        public float basketSpacingY = 2f;
 
-   using System.Collections;
-   using System.Collections.Generic;
-   using UnityEngine;
-   
-   public class Apple : MonoBehaviour {
-      public static float   bottomY = -20f;
-   
-      // Start() method not needed
-      // void Start() {}
-
-      public void AppleMissed() {
-        // Destroy all of the falling Apples
-        GameObject[] appleArray=Gameobject.FindGameObjectWithTag("Apple");
-
-        foreach(GameObject tempGo in appleArray) {
-            Destroy(tempGo);
+        // Start is called before the first frame update
+        void Start()
+        {
+            for (int i = 0; i < numBaskets; i++)
+            {
+                GameObject tBasketsGO = Instantiate<GameObject>(basketPrefab);
+                Vector3 pos = Vector3.zero;
+                pos.y = basketBottomY + (basketSpacingY * i);
+                tBasketsGO.transform.position = pos;
+            }
         }
-      }
-   
-      void Update() {
-         if (transform.position.y < bottomY) {
-            Destroy(this.gameObject);
 
-            // Get a reference to the ApplePicker component of Main Camera
-            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
 
-            // Call the public AppleMissed() method of apScript
-            apScript.AppleMissed();
-         }
-      }
-   }
+        public void AppleMissed()
+        {
+            // Destroy all of the falling Apples
+            GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
+
+            foreach(GameObject tempGO in appleArray)
+            {
+                Destroy(tempGO);
+            }
+        }
+
+
+        // Update is called once per frame
+        void Update()
+        {
+        
+        }
+    }
 ```
 
 __3.__ From the VS menu bar, choose _File > Save All_ to save both the Appple and ApplePicker scripts at the same time.
 
 __4.__ Return to Unity can click _Play_.
+
+
+### Destroing a Basket when an Apple is Missed
+__1.__ Open the _AppplePicker_ Script in VS and match code
+
+```ruby
+// ApplePicker.cs
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.SceneManagement
+
+    public class ApplePicker : MonoBehaviour
+    {
+        [Header("Inscribed")]
+        public GameObject   basketPrefab;
+        public int numBaskets = 3;
+        public float basketBottomY = -14f;
+        public float basketSpacingY = 2f;
+        public List<GameObject> basketList;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            basketList = new List<GameObject>();
+            for (int i = 0; i < numBaskets; i++)
+            {
+                GameObject tBasketsGO = Instantiate<GameObject>(basketPrefab);
+                Vector3 pos = Vector3.zero;
+                pos.y = basketBottomY + (basketSpacingY * i);
+                tBasketsGO.transform.position = pos;
+                basketList.Add(tBasketGO);
+            }
+        }
+
+
+        public void AppleMissed()
+        {
+            // Destroy all of the falling Apples
+            GameObject[] appleArray = GameObject.FindGameObjectsWithTag("Apple");
+
+            foreach(GameObject tempGO in appleArray)
+            {
+                Destroy(tempGO);
+            }
+
+            // Destroy one of the Baskets
+            // Get the index of the last Basket in basketList
+            int basketIndex = basketList.Count -1;
+
+            // Get a reference to the Basket GameObject
+            GameObject basketGO = basketList[basketIndex];
+
+            // Remove the Basket from the list and destroy the GameObject
+            basketList.RemoveAt9basketIndex);
+            Destroy(basketGO);
+
+            // If there are no Baskets left, restart the game
+            if (basketList.Count == 0) {
+                SceneManager.LoadScene("_Scene_0");
+            }
+        }
+
+
+        // Update is called once per frame
+        void Update()
+        {
+        
+        }
+    }
+```
