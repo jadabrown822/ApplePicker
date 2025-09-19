@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 429898470263028510}
   - component: {fileID: 7715603805288683043}
   - component: {fileID: 8736409943574250321}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Basket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526d100d7ae7aa040b492bec87ecc9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreCounter: {fileID: 0}

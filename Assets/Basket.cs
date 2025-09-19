@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Basket : MonoBehaviour
 {
@@ -51,6 +52,11 @@ public class Basket : MonoBehaviour
             // Increases the score
             scoreCounter.score += 100;
             HighScore.TRY_SET_HIGH_SCORE(scoreCounter.score);
+        }
+
+        if (collideWith.CompareTag("Branch"))
+        {
+            SceneManager.LoadScene("_Game_Over");
         }
     }
 }

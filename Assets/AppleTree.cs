@@ -7,10 +7,11 @@ public class AppleTree : MonoBehaviour
     [Header("Inscribed")]
     // Prefab for instantiating apples
     public GameObject applePrefab;
+    public GameObject branchPrefab;
 
 
     // Speed at which the AppleTree moves
-    public float speed = 1f;
+    public float speed = 5f;
 
 
     // Distance where AppleTree turns around
@@ -23,13 +24,35 @@ public class AppleTree : MonoBehaviour
 
     // Seconds between Apple instantiations
     public float appleDropDelay = 1f;
+    public float branchDropDelay = 1f;
+
+
+    // the minimum and maximum values for  the random number range
+    public float minFloat = 1.0f;
+    public float maxFloat = 10.0f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        // Start droppping apples
-        Invoke("DropApple", 2f);
+        Invoke("DropSomething", 2f);
+    }
+
+
+    void DropSomething()
+    {
+        float randomNumber = Random.Range(minFloat, maxFloat);
+
+        if (randomNumber < 2)
+        {
+            DropBranch();
+        }
+        else
+        {
+            DropApple();
+        }
+
+        Invoke("DropSomething", Random.Range(appleDropDelay, branchDropDelay));
     }
 
 
@@ -37,7 +60,13 @@ public class AppleTree : MonoBehaviour
     {
         GameObject apple = Instantiate<GameObject>(applePrefab);
         apple.transform.position = transform.position;
-        Invoke("DropApple", appleDropDelay);
+    }
+
+
+    void DropBranch()
+    {
+        GameObject branch = Instantiate<GameObject>(branchPrefab);
+        branch.transform.position = transform.position;
     }
 
 
@@ -54,7 +83,7 @@ public class AppleTree : MonoBehaviour
         {
             speed = Mathf.Abs(speed);       // Move Right
         }
-        
+
         else if (pos.x > leftAndRightEdge)
         {
             speed = -Mathf.Abs(speed);      // Move Left
